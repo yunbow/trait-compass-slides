@@ -14,7 +14,11 @@ trait-compass-slides/
 │   ├── MetricCard.vue     # 数字（72px）＋説明＋出典（16px）の統計カード
 │   ├── DataFlow.vue       # 処理フロー図（縦: ③、横: ②）
 │   └── BrowserFrame.vue   # 実UIスクリーンショットを収めるブラウザ枠（未挿入時はプレースホルダー表示）
-└── public/images/         # 画面キャプチャの置き場所（README参照）
+└── public/images/         # 画面キャプチャ（本番サイトから取得済み。README参照）
+    ├── result.png         # キャプチャ① 結果画面（レーダーチャート）
+    ├── support-map.png    # キャプチャ② 窓口マッチング地図（台東区で撮影）
+    ├── consent.png        # キャプチャ③ AI解説の送信前プレビュー
+    └── data-sources.png   # /data-sources ページ
 ```
 
 ## セットアップ
@@ -35,9 +39,20 @@ npm run export:png  # スライドごとのPNG書き出し
 
 `npm run export` / `export:pptx` / `export:png` は初回実行時に Playwright が Chromium をダウンロードする（`npx playwright install chromium` が必要な場合あり）。
 
-## 画面キャプチャの追加
+## デプロイ（GitHub Pages）
 
-`public/images/README.md` の手順で撮影したPNGを `public/images/` に置き、`slides.md` 内の該当する `<BrowserFrame>` に `src="/images/xxxx.png"` を追加する。画像未挿入の間は「スクリーンショット未挿入」のプレースホルダー枠が表示される。
+`main` ブランチへの push をトリガーに `.github/workflows/deploy.yml` が `npm run build` を実行し、`dist/` を GitHub Pages へ自動デプロイします。ビルド成果物はリポジトリにコミットしません。
+GitHub Pages の **Settings → Pages → Build and deployment → Source** は **GitHub Actions** を選択してください。
+
+`npm run build` はプロジェクトサイトのサブパス用に `--base /trait-compass-slides/` を付与しています。リポジトリ名を変更した場合は `package.json` の `build` スクリプトも合わせて変更してください。
+
+ローカルで公開ファイルを確認する場合は `npm run build && npx serve dist` などで確認してください。
+
+## 画面キャプチャ
+
+`public/images/` の4枚は、本番サイト（`https://trait-compass.trait-compass.workers.dev`）をブラウザ自動操作で実際に操作して取得したスクリーンショットで、`slides.md` の各 `<BrowserFrame>` から `src="/images/xxxx.png"` で参照済み。窓口マッチング地図は台東区（ピンが複数立ち、スライド③のデータ透明性セクションと一貫する地域）で撮影した。
+
+提出前に本番データが更新されている場合は、`public/images/README.md` の手順（Chrome DevTools の Device Toolbar を1600×900pxに設定し「Capture screenshot」）で撮り直し、同じファイル名で上書きすればよい。画像が無い状態に戻すと自動的に「スクリーンショット未挿入」のプレースホルダー枠が表示される。
 
 ## レイアウトを崩さず修正する
 

@@ -67,8 +67,8 @@ const demoFlowSteps = [
     <DataFlow direction="horizontal" :steps="demoFlowSteps" />
   </div>
   <div class="flex gap-6" style="flex:1;">
-    <BrowserFrame url="trait-compass.trait-compass.workers.dev/result" caption="キャプチャ① 結果画面（レーダーチャート＋相談分野タグ）" height="150px" />
-    <BrowserFrame url="trait-compass.trait-compass.workers.dev/support" caption="キャプチャ② 窓口マッチング地図" height="150px" />
+    <BrowserFrame url="trait-compass.trait-compass.workers.dev/result" src="/images/result.png" caption="キャプチャ① 結果画面（レーダーチャート＋相談分野タグ）" height="150px" />
+    <BrowserFrame url="trait-compass.trait-compass.workers.dev/support" src="/images/support-map.png" caption="キャプチャ② 窓口マッチング地図" height="150px" />
   </div>
   <div class="tc-note">
     チェックをしなくても支援情報だけを探すこともできます。
@@ -99,7 +99,7 @@ const dataSourceFlowSteps = [
       <DataFlow direction="vertical" :steps="dataSourceFlowSteps" />
     </div>
     <div style="flex:1;" class="flex flex-col gap-3">
-      <BrowserFrame url="trait-compass.trait-compass.workers.dev/data-sources" caption="利用しているデータ（/data-sources）" height="130px" />
+      <BrowserFrame url="trait-compass.trait-compass.workers.dev/data-sources" src="/images/data-sources.png" caption="利用しているデータ（/data-sources）" height="130px" />
       <p style="font-size:13px; color:var(--tc-text-muted); line-height:1.7;">
         オープンデータ／標準利用規約データ／個別許諾データに区分し、各データの出典・ライセンス・最終取得日・利用件数を公開。代表例: 台東区のオープンデータ、医療情報ネット（592件）、発達障害情報・支援センター（3件）、WAM NET（3,950件）、複数自治体の個別許諾データ。
       </p>
@@ -132,7 +132,7 @@ const dataSourceFlowSteps = [
   </p>
   <div class="flex gap-8" style="flex:1;">
     <div style="flex:1;">
-      <BrowserFrame url="trait-compass.trait-compass.workers.dev/explain" caption="キャプチャ③ AI解説の送信前プレビュー" height="210px" />
+      <BrowserFrame url="trait-compass.trait-compass.workers.dev/result/prepare" src="/images/consent.png" caption="キャプチャ③ AI解説の送信前プレビュー" height="210px" />
     </div>
     <div style="flex:0 0 240px;" class="flex flex-col gap-3 justify-center">
       <div style="border:1px solid var(--tc-border); border-radius:6px; padding:12px 16px; font-size:14px; font-weight:700; color:var(--tc-navy);">サーバー非送信</div>
