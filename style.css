@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+:root {
+  --tc-navy: #16233f;
+  --tc-navy-soft: #2b3c5e;
+  --tc-green: #3c6b56;
+  --tc-green-soft: #e7f0ea;
+  --tc-bg: #ffffff;
+  --tc-text: #1c1f26;
+  --tc-text-muted: #5b6472;
+  --tc-border: #dfe3ea;
+  --tc-font: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    'Yu Gothic', 'Meiryo', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Slidev slide surface: white background, generous padding, no photo-heavy decoration */
+.slidev-page {
+  background: var(--tc-bg) !important;
+  color: var(--tc-text);
+  font-family: var(--tc-font);
+}
+
+.slidev-layout {
+  padding: 64px 80px !important;
+  font-family: var(--tc-font);
+}
+
+.slidev-layout h1 {
+  color: var(--tc-navy);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+.slidev-layout h2 {
+  color: var(--tc-navy);
+  font-weight: 700;
+}
+
+.slidev-layout p {
+  color: var(--tc-text);
+  line-height: 1.85;
+}
+
+.slidev-layout a {
+  color: var(--tc-green);
+}
+
+/* Shared utility classes used across slides/components */
+.tc-eyebrow {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tc-green);
+  border: 1px solid var(--tc-green);
+  border-radius: 999px;
+  padding: 4px 16px;
+  margin-bottom: 20px;
+}
+
+.tc-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--tc-navy);
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.tc-body {
+  font-size: 17px;
+  color: var(--tc-text);
+  line-height: 1.9;
+}
+
+.tc-note {
+  font-size: 13px;
+  color: var(--tc-text-muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--tc-border);
+  padding-top: 10px;
+  margin-top: auto;
+}
+
+.tc-footer {
+  position: absolute;
+  bottom: 28px;
+  left: 80px;
+  right: 80px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--tc-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Print / PDF export: freeze the layout so exported pages match the on-screen deck exactly */
+@media print {
+  .slidev-layout {
+    padding: 64px 80px !important;
+  }
+  .tc-footer {
+    position: absolute;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "trait-compass-slides",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md --base /trait-compass-slides/",
+    "export": "slidev export slides.md --format pdf --output dist/trait-compass.pdf --with-clicks=false",
+    "export:pptx": "slidev export slides.md --format pptx --output dist/trait-compass.pptx",
+    "export:png": "slidev export slides.md --format png --output dist/trait-compass-png"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.19.1",
+    "@slidev/theme-default": "^0.25.0",
+    "vue": "^3.5.41"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.62.1"
+  },
+  "allowScripts": {
+    "playwright-chromium@1.62.1": true
+  }
+}
