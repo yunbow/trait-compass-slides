@@ -1,27 +1,21 @@
 # trait-compass-slides
 
-Trait Compass 提出用プレゼン資料（6枚・16:9・1280×720相当）を Slidev + Vue で実装したリポジトリ。
+[![Deploy to GitHub Pages](https://github.com/yunbow/trait-compass-slides/actions/workflows/deploy.yml/badge.svg)](https://github.com/yunbow/trait-compass-slides/actions/workflows/deploy.yml)
 
-文言・統計値は `/Users/yun2/Project/hackathon/trait-compass/trait-compass 提出用プレゼン資料（PPT_PDF）・画面キャプチャ下書き（2026-08-20）.md` §2 の確定内容から一字一句変更していない。
+**プレゼン資料:** https://yunbow.github.io/trait-compass-slides/ ｜ **Trait Compassを試す:** https://trait-compass.trait-compass.workers.dev/ ｜ **Trait Compass GitHub:** https://github.com/yunbow/trait-compass
 
-## 構成
+Trait Compass 提出用プレゼン資料（6枚・16:9・1280×720相当）を Slidev + Vue で実装したリポジトリです。「東京都知事杯オープンデータ・ハッカソン2026」への応募作品である trait-compass を、審査員向けに紹介します。
 
-```
-trait-compass-slides/
-├── slides.md              # 6枚（表紙／①課題／②デモ／③データ活用+技術力／④プライバシー／⑤社会実装）
-├── style.css              # 配色（白背景＋濃紺＋落ち着いた緑）・余白・PDF出力時のレイアウト固定
-├── components/
-│   ├── MetricCard.vue     # 数字（72px）＋説明＋出典（16px）の統計カード
-│   ├── DataFlow.vue       # 処理フロー図（縦: ③、横: ②）
-│   └── BrowserFrame.vue   # 実UIスクリーンショットを収めるブラウザ枠（未挿入時はプレースホルダー表示）
-└── public/images/         # 画面キャプチャ（本番サイトから取得済み。README参照）
-    ├── result.png         # キャプチャ① 結果画面（レーダーチャート）
-    ├── support-map.png    # キャプチャ② 窓口マッチング地図（台東区で撮影）
-    ├── consent.png        # キャプチャ③ AI解説の送信前プレビュー
-    └── data-sources.png   # /data-sources ページ
-```
+- **trait-compass-slides** — このリポジトリ。プレゼン資料本体（Slidev + Vue）のソースコードを管理しています。
+- **trait-compass**（[yunbow/trait-compass](https://github.com/yunbow/trait-compass)） — CivicUnknot が開発しているハッカソン応募作品。実装・データ・詳細設計は上記リポジトリで管理しています。
 
-## セットアップ
+文言・統計値は `/Users/yun2/Project/hackathon/trait-compass/trait-compass 提出用プレゼン資料（PPT_PDF）・画面キャプチャ下書き（2026-08-20）.md` §2 の確定内容から一字一句変更していません。
+
+## 技術スタック
+
+Slidev / Vue 3 / CSS
+
+## 開発
 
 ```bash
 npm install
@@ -31,7 +25,7 @@ npm run dev        # http://localhost:3030 でプレビュー（プレゼンタ�
 ## 書き出し
 
 ```bash
-npm run build       # 静的サイトとしてビルド（dist/）
+npm run build       # GitHub Pages 用の静的サイトを生成（dist/）
 npm run export      # PDF書き出し（dist/trait-compass.pdf）※提出物
 npm run export:pptx # PPTX書き出し
 npm run export:png  # スライドごとのPNG書き出し
@@ -47,6 +41,23 @@ GitHub Pages の **Settings → Pages → Build and deployment → Source** は 
 `npm run build` はプロジェクトサイトのサブパス用に `--base /trait-compass-slides/` を付与しています。リポジトリ名を変更した場合は `package.json` の `build` スクリプトも合わせて変更してください。
 
 ローカルで公開ファイルを確認する場合は `npm run build && npx serve dist` などで確認してください。
+
+## ディレクトリ構成
+
+```text
+trait-compass-slides/
+├── slides.md              # 6枚（表紙／①課題／②デモ／③データ活用+技術力／④プライバシー／⑤社会実装）
+├── style.css              # 配色（白背景＋濃紺＋落ち着いた緑）・余白・PDF出力時のレイアウト固定
+├── components/
+│   ├── MetricCard.vue     # 数字（72px）＋説明＋出典（16px）の統計カード
+│   ├── DataFlow.vue       # 処理フロー図（縦: ③、横: ②）
+│   └── BrowserFrame.vue   # 実UIスクリーンショットを収めるブラウザ枠（未挿入時はプレースホルダー表示）
+└── public/images/         # 画面キャプチャ（本番サイトから取得済み。README参照）
+    ├── result.png         # キャプチャ① 結果画面（レーダーチャート）
+    ├── support-map.png    # キャプチャ② 窓口マッチング地図（台東区で撮影）
+    ├── consent.png        # キャプチャ③ AI解説の送信前プレビュー
+    └── data-sources.png   # /data-sources ページ
+```
 
 ## 画面キャプチャ
 
