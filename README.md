@@ -10,7 +10,7 @@ Trait Compass 提出用プレゼン資料（6枚・16:9・1280×720相当）を 
 - **trait-compass-slides** — このリポジトリ。プレゼン資料本体（Slidev + Vue）のソースコードを管理しています。
 - **trait-compass**（[yunbow/trait-compass](https://github.com/yunbow/trait-compass)） — CivicUnknot が開発しているハッカソン応募作品。実装・データ・詳細設計は上記リポジトリで管理しています。
 
-文言・統計値は `/Users/yun2/Project/hackathon/trait-compass/trait-compass 提出用プレゼン資料（PPT_PDF）・画面キャプチャ下書き（2026-08-20）.md` §2 の確定内容から一字一句変更していません。
+文言・統計値は Trait Compass 本体リポジトリ（[yunbow/trait-compass](https://github.com/yunbow/trait-compass)）および大会提出用に確認した一次情報を基準としています。
 
 ## 技術スタック
 
@@ -56,7 +56,7 @@ app/
 │   ├── DataFlow.vue       # 処理フロー図（縦: ③、横: ②）
 │   └── BrowserFrame.vue   # 実UIスクリーンショットを収めるブラウザ枠（未挿入時はプレースホルダー表示）
 ├── public/images/         # 画面キャプチャ（本番サイトから取得済み。README参照）
-│   ├── result.png         # キャプチャ① 結果画面（レーダーチャート）
+│   ├── result.png         # キャプチャ① 結果画面（相談分野タグ＋レーダーチャート）
 │   ├── support-map.png    # キャプチャ② 窓口マッチング地図（台東区で撮影）
 │   ├── consent.png        # キャプチャ③ AI解説の送信前プレビュー
 │   └── data-sources.png   # /data-sources ページ

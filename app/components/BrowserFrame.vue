@@ -7,6 +7,8 @@ const props = defineProps({
   src: { type: String, default: '' },
   alt: { type: String, default: '' },
   height: { type: String, default: '190px' },
+  objectFit: { type: String, default: 'cover' },
+  objectPosition: { type: String, default: 'center' },
 })
 
 const resolvedSrc = computed(() =>
@@ -21,10 +23,15 @@ const resolvedSrc = computed(() =>
       <div class="address-bar">{{ url }}</div>
     </div>
     <div class="viewport" :style="{ height }">
-      <img v-if="resolvedSrc" :src="resolvedSrc" :alt="alt || caption" />
+      <img
+        v-if="resolvedSrc"
+        :src="resolvedSrc"
+        :alt="alt || caption"
+        :style="{ objectFit, objectPosition }"
+      />
       <div v-else class="placeholder">
         <div class="placeholder-title">スクリーンショット未挿入</div>
-        <div class="placeholder-hint">§3.6の手順で撮影した1600×900pxの画像を<br />images/ に追加し、src で参照してください</div>
+        <div class="placeholder-hint">public/images/README.md の手順で撮影した1600×900pxの画像を<br />images/ に追加し、src で参照してください</div>
       </div>
     </div>
     <figcaption v-if="caption">{{ caption }}</figcaption>
@@ -82,7 +89,6 @@ const resolvedSrc = computed(() =>
 .viewport img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 

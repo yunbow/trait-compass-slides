@@ -11,14 +11,16 @@ drawings:
 transition: none
 mdc: false
 fonts:
-  sans: 'Noto Sans JP'
+  sans: 'Hiragino Sans'
+  provider: none
 ---
 
 <div class="h-full flex flex-col items-center justify-center text-center">
   <div class="tc-eyebrow">都知事杯2026 ハッカソン提出資料</div>
   <div style="font-size:64px; font-weight:900; color:var(--tc-navy); letter-spacing:0.02em;">Trait Compass</div>
   <div style="font-size:28px; font-weight:700; color:var(--tc-green); margin-top:18px;">気づきと相談のあいだをつなぐ</div>
-  <div class="tc-demo-cta" style="margin-top:56px;">デモを試す&nbsp; → &nbsp;trait-compass.trait-compass.workers.dev</div>
+  <div style="font-size:17px; color:var(--tc-text-muted); margin-top:14px;">CivicUnknot</div>
+  <a class="tc-demo-cta" href="https://trait-compass.trait-compass.workers.dev" target="_blank" rel="noopener" style="margin-top:56px; text-decoration:none;">デモを試す&nbsp; → &nbsp;trait-compass.trait-compass.workers.dev</a>
 </div>
 
 <!--
@@ -43,8 +45,8 @@ fonts:
 </div>
 
 <!--
-「自分は発達障害かもしれない」――そう感じても、次の一歩が分からず立ち止まる人は少なくありません。文部科学省の調査では、通常学級の児童生徒の8.8パーセント、11人に1人に、学習面や行動面で著しい困難があるとされています。しかし専門機関の初診までの待機期間は平均2.6か月。この「気づき」と「相談」のあいだの空白を、オープンデータとプライバシー保護設計で埋めるサービスを、私たちは作りました。
-(目安39秒・196字)
+「自分は発達障害かもしれない」と感じても、次の一歩が分からず立ち止まる人は少なくありません。通常学級の児童生徒の8.8パーセント、11人に1人に著しい困難があるとされる一方、専門機関の初診までは平均2.6か月かかります。この空白を、オープンデータとプライバシー保護設計で埋めるサービスを作りました。
+(目安30秒・149字)
 -->
 
 ---
@@ -61,14 +63,14 @@ const demoFlowSteps = [
   <div class="tc-eyebrow">デモ｜サービスデザイン／オーディエンス</div>
   <div class="tc-title">セルフチェックが、相談分野タグに変わる。</div>
   <p class="tc-body" style="margin-bottom:20px;">
-    30問のセルフチェックを、診断名ではなく6つの「相談分野タグ」に変換。ライフステージと居住地を選ぶだけで、利用者に合う公的窓口を地図と一覧で案内します。
+    30問のセルフチェックを、診断名ではなく6つの「相談分野タグ」に変換。ライフステージと居住地を選ぶだけで、条件に合う公的相談窓口・施設候補を地図と一覧で提示します。
   </p>
   <div style="margin-bottom:20px;">
     <DataFlow direction="horizontal" :steps="demoFlowSteps" />
   </div>
   <div class="flex gap-6" style="flex:1;">
-    <BrowserFrame url="trait-compass.trait-compass.workers.dev/result" src="/images/result.png" caption="① 診断名ではなく、相談分野タグで示す" height="180px" />
-    <BrowserFrame url="trait-compass.trait-compass.workers.dev/support" src="/images/support-map.png" caption="② 地図と一覧から、公的窓口を選べる" height="180px" />
+    <BrowserFrame url="trait-compass.trait-compass.workers.dev/result" src="/images/result.png" caption="① 診断名ではなく、相談分野タグで示す" height="180px" object-fit="contain" />
+    <BrowserFrame url="trait-compass.trait-compass.workers.dev/support" src="/images/support-map.png" caption="② 地図と一覧から、公的窓口を選べる" height="180px" object-position="bottom" />
   </div>
   <div class="tc-note">
     チェックをしなくても支援情報だけを探すこともできます。
@@ -99,7 +101,7 @@ const dataSourceFlowSteps = [
       <DataFlow direction="vertical" :steps="dataSourceFlowSteps" />
     </div>
     <div style="flex:1;" class="flex flex-col gap-3">
-      <BrowserFrame url="trait-compass.trait-compass.workers.dev/data-sources" src="/images/data-sources.png" caption="利用しているデータ（/data-sources）" height="130px" />
+      <BrowserFrame url="trait-compass.trait-compass.workers.dev/data-sources" src="/images/data-sources.png" caption="利用しているデータ（/data-sources）" height="130px" object-position="top" />
       <p style="font-size:13px; color:var(--tc-text-muted); line-height:1.7;">
         出典・ライセンス・最終取得日・利用件数を公開し、データの根拠をたどれるようにしています。自治体、公的機関、医療情報ネット、WAM NETなどの情報を横断して扱います。
       </p>
@@ -109,7 +111,7 @@ const dataSourceFlowSteps = [
       <div class="flex gap-2" style="font-size:11px; color:var(--tc-text-muted);">
         <span style="border:1px solid var(--tc-border); border-radius:999px; padding:3px 10px;">CKAN API</span>
         <span style="border:1px solid var(--tc-border); border-radius:999px; padding:3px 10px;">Cloudflare Workers・D1・R2</span>
-        <span style="border:1px solid var(--tc-border); border-radius:999px; padding:3px 10px;">カテゴリ名のみを送るAI解説</span>
+        <span style="border:1px solid var(--tc-border); border-radius:999px; padding:3px 10px;">送信内容を事前確認できるAI解説</span>
       </div>
     </div>
   </div>
@@ -128,14 +130,14 @@ const dataSourceFlowSteps = [
   <div class="tc-eyebrow">プライバシー｜サービスデザイン</div>
   <div class="tc-title">診断せず、送信前に確認できる。</div>
   <p class="tc-body" style="margin-bottom:20px;">
-    回答は端末内だけで処理・保存し、サーバーへ送信しません。AI解説は完全オプトイン。送信前に、送るものと送らないものを必ず確認できます。
+    セルフチェックの個別回答は端末内だけで処理・保存し、サーバーへ送信しません。AI解説は完全オプトインで、送信内容を事前に確認できます。
   </p>
   <div class="flex gap-8" style="flex:1;">
     <div style="flex:1;">
       <BrowserFrame url="trait-compass.trait-compass.workers.dev/result/prepare" src="/images/consent.png" caption="キャプチャ③ AI解説の送信前プレビュー" height="210px" />
     </div>
     <div style="flex:0 0 240px;" class="flex flex-col gap-3 justify-center">
-      <div style="border:1px solid var(--tc-border); border-radius:6px; padding:12px 16px; font-size:14px; font-weight:700; color:var(--tc-navy);">サーバー非送信</div>
+      <div style="border:1px solid var(--tc-border); border-radius:6px; padding:12px 16px; font-size:14px; font-weight:700; color:var(--tc-navy);">個別回答は非送信</div>
       <div style="border:1px solid var(--tc-border); border-radius:6px; padding:12px 16px; font-size:14px; font-weight:700; color:var(--tc-navy);">非診断</div>
       <div style="border:1px solid var(--tc-border); border-radius:6px; padding:12px 16px; font-size:14px; font-weight:700; color:var(--tc-navy);">完全オプトイン</div>
     </div>
@@ -163,23 +165,23 @@ const dataSourceFlowSteps = [
     </div>
     <div style="flex:0 0 320px;" class="flex flex-col items-center justify-center text-center">
       <div style="font-size:88px; font-weight:900; color:var(--tc-navy); line-height:1;">54<span style="font-size:36px; color:var(--tc-navy-soft);">/62</span></div>
-      <div class="tc-coverage-rate">87% を掲載済み</div>
       <div style="font-size:16px; color:var(--tc-text); margin-top:8px;">区市町村で支援情報を掲載</div>
       <div class="tc-note" style="border-top:none; margin-top:20px; text-align:center;">
-        自治体ごとにデータの充足度は異なります。<br />
-        （/coverage: データなし8／1分類のみ41／2分類充足8／3分類すべて充足5）
+        ※自治体ごとにデータの充足度は異なります
       </div>
     </div>
   </div>
   <div class="tc-footer" style="position:static; margin-top:16px;">
     <span></span>
-    <span>デモを試す → trait-compass.trait-compass.workers.dev</span>
+    <a href="https://trait-compass.trait-compass.workers.dev" target="_blank" rel="noopener" style="color:inherit;">デモを試す → trait-compass.trait-compass.workers.dev</a>
   </div>
 </div>
 
 <!--
 症状のラベルではなく、次の一歩へ。すでに都内54の区市町村で支援情報を掲載しながら、この窓口ナビを、東京都の誰もが使える相談の入り口に育てていきます。
 (目安15秒・75字)
+
+充足度の内訳（/coverage、口頭では言わない・スライドを指しながら「充足度は異なります」とだけ触れる）: データなし8／1分類のみ41／2分類充足8／3分類すべて充足5。
 
 原稿作成メモ: 「54の区市町村」は本番/outcomesの実測値。収録直前に必ず最新の自治体数を再確認し、変わっていれば数字を読み替えること。「GovTech東京や区市町村とも連携しながら」は連携実績が未検証のため削除済み・読み上げ原稿にも含めない。
 -->

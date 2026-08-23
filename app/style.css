@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
-
 :root {
   --tc-navy: #16233f;
   --tc-navy-soft: #2b3c5e;
@@ -9,8 +7,8 @@
   --tc-text: #1c1f26;
   --tc-text-muted: #5b6472;
   --tc-border: #dfe3ea;
-  --tc-font: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
-    'Yu Gothic', 'Meiryo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --tc-font: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic',
+    'Meiryo', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Slidev slide surface: white background, generous padding, no photo-heavy decoration */
@@ -83,7 +81,10 @@
 }
 
 .tc-demo-cta {
-  border: 1px solid var(--tc-green);
+  display: inline-block;
+  border-style: solid !important;
+  border-width: 1px;
+  border-color: var(--tc-green);
   border-radius: 999px;
   padding: 10px 20px;
   color: var(--tc-green);
