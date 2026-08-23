@@ -1,11 +1,17 @@
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   url: { type: String, default: 'trait-compass.trait-compass.workers.dev' },
   caption: { type: String, default: '' },
   src: { type: String, default: '' },
   alt: { type: String, default: '' },
   height: { type: String, default: '190px' },
 })
+
+const resolvedSrc = computed(() =>
+  props.src ? `${import.meta.env.BASE_URL}${props.src.replace(/^\//, '')}` : ''
+)
 </script>
 
 <template>
@@ -15,7 +21,7 @@ defineProps({
       <div class="address-bar">{{ url }}</div>
     </div>
     <div class="viewport" :style="{ height }">
-      <img v-if="src" :src="src" :alt="alt || caption" />
+      <img v-if="resolvedSrc" :src="resolvedSrc" :alt="alt || caption" />
       <div v-else class="placeholder">
         <div class="placeholder-title">スクリーンショット未挿入</div>
         <div class="placeholder-hint">§3.6の手順で撮影した1600×900pxの画像を<br />images/ に追加し、src で参照してください</div>
