@@ -16,7 +16,7 @@ fonts:
 ---
 
 <div class="h-full flex flex-col items-center justify-center text-center">
-  <div class="tc-eyebrow">都知事杯2026 ハッカソン提出資料</div>
+  <div class="tc-eyebrow">東京都知事杯 オープンデータ・ハッカソン 2026</div>
   <div style="font-size:64px; font-weight:900; color:var(--tc-navy); letter-spacing:0.02em;">Trait Compass</div>
   <div style="font-size:28px; font-weight:700; color:var(--tc-green); margin-top:18px;">気づきと相談のあいだをつなぐ</div>
   <div style="font-size:17px; color:var(--tc-text-muted); margin-top:14px;">CivicUnknot</div>
@@ -78,8 +78,8 @@ const demoFlowSteps = [
 </div>
 
 <!--
-ブラウザで30の質問に答えると、結果は病名ではなく、レーダーチャートと相談分野タグで示されます。ライフステージと区市町村を選ぶだけで、自分に合う公的相談窓口が地図と一覧で見つかります。チェックをしなくても、窓口だけを探すこともできます。
-(目安24秒・118字)
+ブラウザで30の質問に答えると、結果は病名ではなく、レーダーチャートと相談分野タグで示されます。ライフステージと区市町村を選ぶだけで、条件に合う公的相談窓口・施設候補を地図と一覧で確認できます。チェックをしなくても、窓口だけを探すこともできます。
+(目安25秒・123字)
 -->
 
 ---
@@ -145,8 +145,8 @@ const dataSourceFlowSteps = [
 </div>
 
 <!--
-回答はサーバーには送らず、端末の中だけで処理・保存します。AIによる解説機能も完全オプトインで、送信前に内容を必ず確認できます。
-(目安13秒・64字)
+セルフチェックの個別回答は端末内だけで処理・保存し、サーバーへ送信しません。AI解説は完全オプトインで、送信内容を事前に確認できます。
+(目安13秒・67字)
 -->
 
 ---
@@ -160,7 +160,7 @@ const dataSourceFlowSteps = [
         すでに54区市町村の相談窓口・施設情報を掲載し、本番稼働しています。データの充足度も公開しながら、残る地域とデータソースをつなぎ、誰もが相談先にたどり着ける入口を育てます。
       </p>
       <p style="font-size:13px; color:var(--tc-text-muted); margin-top:16px; line-height:1.7;">
-        実装済みの「統一支援施設スキーマ提案」は、単なる技術文書ではなく、行政のデータ公開実務そのものへの提言でもある。
+        自治体が支援情報を共通形式で公開できる「統一支援施設スキーマ」も提案している。
       </p>
     </div>
     <div style="flex:0 0 320px;" class="flex flex-col items-center justify-center text-center">

@@ -56,7 +56,7 @@ app/
 │   ├── DataFlow.vue       # 処理フロー図（縦: ③、横: ②）
 │   └── BrowserFrame.vue   # 実UIスクリーンショットを収めるブラウザ枠（未挿入時はプレースホルダー表示）
 ├── public/images/         # 画面キャプチャ（本番サイトから取得済み。README参照）
-│   ├── result.png         # キャプチャ① 結果画面（相談分野タグ＋レーダーチャート）
+│   ├── result.png         # キャプチャ① 相談分野タグ3件＋レーダーチャートの合成画像（横長）
 │   ├── support-map.png    # キャプチャ② 窓口マッチング地図（台東区で撮影）
 │   ├── consent.png        # キャプチャ③ AI解説の送信前プレビュー
 │   └── data-sources.png   # /data-sources ページ
