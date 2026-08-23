@@ -82,6 +82,23 @@
   margin-top: auto;
 }
 
+.tc-demo-cta {
+  border: 1px solid var(--tc-green);
+  border-radius: 999px;
+  padding: 10px 20px;
+  color: var(--tc-green);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tc-coverage-rate {
+  margin-top: 8px;
+  color: var(--tc-green);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
 .tc-footer {
   position: absolute;
   bottom: 28px;
